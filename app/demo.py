@@ -39,7 +39,7 @@ if "seeds" not in st.session_state:
 st.title("Cross-domain taste engine")
 st.caption(
     "Real collaborative filtering trained on MovieLens and Last.fm data, "
-    "blended with a shared content-embedding bridge -- so a movie you "
+    "blended with a shared content-embedding bridge - so a movie you "
     "like can genuinely surface a matching artist, and vice versa."
 )
 

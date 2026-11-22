@@ -31,20 +31,20 @@ Python, `implicit`, spaCy word vectors (only used to *generate* the embeddings -
 ```bash
 uv sync
 
-uv run src/ingest/load_movielens.py
-uv run src/ingest/load_lastfm.py
+uv run python -m src/ingest/load_movielens.py
+uv run python -m src/ingest/load_lastfm.py
 
-uv run src/models/train_cf.py movies
-uv run src/models/train_cf.py music
+uv run python -m src/models/train_cf.py movies
+uv run python -m src/models/train_cf.py music
 
 # needs movies_tags.parquet / music_tags.parquet -- see scripts/fetch_movie_tags.py
 # and scripts/fetch_music_tags.py, both need a free API key (instructions in
 # the docstring at the top of each)
-uv run src/models/content_embed.py
+uv run python -m src/models/content_embed.py
 
-uv run src/blend.py          # quick sanity check in the terminal
-uv run uvicorn api.main:app --reload   # REST API, docs at /docs
-uv run streamlit run app/demo.py       # the actual demo UI
+uv run python -m src/blend.py          # quick sanity check in the terminal
+uv run python -m uvicorn api.main:app --reload   # REST API, docs at /docs
+uv run python -m streamlit run app/demo.py       # the actual demo UI
 ```
 
 <!-- Every step above has its expected output written down in `VERIFY.md`, so you can check your own run against what it's supposed to produce instead of just hoping it worked. -->
